@@ -1,0 +1,159 @@
+/* ======= Reset e base ======= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #fcf1f0;
+    color: #333;
+    padding-bottom: 90px; /* espaço para o rodapé fixo não cobrir o conteúdo */
+}
+
+/* ======= MENU ======= */
+header.menu {
+    background: #ff7043; /* cor da faixa */
+    position: sticky; /* fixa no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+header.menu nav {
+    display: flex;
+    align-items: center;       /* centraliza verticalmente */
+    justify-content: center;   /* centraliza horizontalmente */
+    gap: 20px; /* espaçamento entre logo e links */
+    padding: 10px 20px;
+}
+
+header.menu img {
+    max-height: 90px;
+}
+
+/* Links do menu */
+header.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header.menu a:hover {
+    color: #ffe0b2;
+}
+
+/* ======= BANNER (HERO) ======= */
+.hero {
+    width: 100%;
+    height: 100vh; /* ocupa 100% da altura da tela */
+    background: url("../img/banner.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3em;
+    color: white;
+    text-shadow: 5px 2px 5px rgba(0,0,0,0.4);
+}
+
+/* ======= TEXTO INTRODUTÓRIO ======= */
+.Text-coment {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 15px;
+    text-align: center;
+    font-size: 1em;
+}
+
+/* ======= BLOCO DE RECEITAS ======= */
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+.block {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.block img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.block div {
+    padding: 15px;
+}
+
+.block h2 {
+    margin-bottom: 10px;
+    color: #ff7043;
+}
+
+.block p {
+    margin-bottom: 15px;
+}
+
+.block .button {
+    display: inline-block;
+    background: #ff7043;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.block .button:hover {
+    background: #e64a19;
+}
+
+.block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ======= RODAPÉ FIXO ======= */
+footer.rodape {
+    background: #ff7043;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;  /* fixa no rodapé */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+footer.rodape img {
+    margin: 5px 0;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media (max-width: 768px) {
+    header.menu nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .hero {
+        height: 40vh;
+    }
+    .hero h1 {
+        font-size: 1em;
+    }
+}
